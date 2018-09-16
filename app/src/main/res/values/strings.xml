@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Exercise1</string>
+    <string name="app_name">Exercise #1</string>
+    <string name="hint_msg_edit">Type your message here...</string>
+    <string name="preview">PREVIEW</string>
+    <string name="email">EMAIL</string>
+    <string name="warning_empty_message">Please enter your message</string>
+    <string name="warning_no_email_app">No Email app found</string>
+    <string name="default_subject">Hello, Android Academy MSK!</string>
 </resources>
