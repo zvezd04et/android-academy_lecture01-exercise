@@ -14,6 +14,12 @@ public class PreviewActivity extends AppCompatActivity {
 
     private static final String EXTRA_MSG = "EXTRA_MSG";
 
+    public static void start(Activity activity, String previewMsg) {
+        final Intent intent = new Intent(activity, PreviewActivity.class);
+        intent.putExtra(EXTRA_MSG, previewMsg);
+        activity.startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,12 +36,6 @@ public class PreviewActivity extends AppCompatActivity {
                 openEmailApp(msg);
             }
         });
-    }
-
-    public static void start(Activity activity, String previewMsg) {
-        final Intent intent = new Intent(activity, PreviewActivity.class);
-        intent.putExtra(EXTRA_MSG, previewMsg);
-        activity.startActivity(intent);
     }
 
     private void openEmailApp(String msg) {
