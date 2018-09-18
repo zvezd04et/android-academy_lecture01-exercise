@@ -3,6 +3,8 @@ package com.z.exercise1;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,14 +16,14 @@ public class PreviewActivity extends AppCompatActivity {
 
     private static final String EXTRA_MSG = "EXTRA_MSG";
 
-    public static void start(Activity activity, String previewMsg) {
+    public static void start(@NonNull Activity activity, @NonNull String previewMsg) {
         final Intent intent = new Intent(activity, PreviewActivity.class);
         intent.putExtra(EXTRA_MSG, previewMsg);
         activity.startActivity(intent);
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preview);
 
@@ -38,7 +40,7 @@ public class PreviewActivity extends AppCompatActivity {
         });
     }
 
-    private void openEmailApp(String msg) {
+    private void openEmailApp(@NonNull String msg) {
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));
@@ -50,8 +52,8 @@ public class PreviewActivity extends AppCompatActivity {
         }
 
         startActivity(intent);
-
     }
+
 }
 
 
